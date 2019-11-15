@@ -15,7 +15,7 @@ export function Container(props) {
       <nav>
         <span>
           <NavLink exact to="/">Login</NavLink><br />
-          <NavLink to="/friends">Friends List</NavLink><br />
+          <NavLink to="/users">Users List</NavLink><br />
         </span>
 
         <button onClick={onLogout}>Logout</button>
@@ -31,7 +31,7 @@ export function Container(props) {
 
         <Route
           exact
-          path="/friends"
+          path="/users"
           render={props => withAuthCkeck(UsersList, props)}
         />
       </main>
