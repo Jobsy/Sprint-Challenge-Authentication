@@ -22,10 +22,12 @@ describe("server", () => {
     describe("[GET] / endpoint", () => {
       
          test("should find user", async () => {
-            await users.findBy({ username: "tessy", password: "1234" })
-
-            const Users = await db("users")
-            expect(Users).toHaveLength(0)
+            // const response = await request(server).get("/api/jokes")
+            // expect(response.status).toBe(201)
+            return request(server).get("/")
+            .expect("content-length", "139")
+            .expect("content-type", /text/)
+            
         })
     })
 })
