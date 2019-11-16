@@ -12,15 +12,16 @@ export default function LoginForm(props) {
         username: userNameRef.current.value,
         password: passwordRef.current.value,
     })
-        axios.post("http://localhost:5000/api/login", {
+        axios.post("http://localhost:3300/api/auth/login", {
           
             username: userNameRef.current.value,
             password: passwordRef.current.value,
         })
         .then(res => {
             // debugger
-            localStorage.setItem("token", res.data.payload)
-            props.history.push("/friends");
+            // console.log("///token: ", res.data.token)
+            localStorage.setItem("token", res.data.token)
+            props.history.push("/users");
         });
     };
 

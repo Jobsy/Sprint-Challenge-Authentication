@@ -2,7 +2,7 @@ import React from "react";
 import { Route, NavLink, withRouter } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import UsersList from "./UsersList";
-import { withAuthCkeck } from "./withAuthCkeck";
+import { withAuthCkeck } from "./WithAuthCheck";
 
 export function Container(props) {
   const onLogout = () => {
