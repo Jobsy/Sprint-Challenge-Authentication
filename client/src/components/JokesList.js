@@ -5,7 +5,7 @@ import axiosWithAuth from "../axios/index";
 
 
 
-export default function UsersList(props) {
+export default function JokesList(props) {
   const [jokes, setJokes] = useState({ data: [] });
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, NavLink, withRouter } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
-import UsersList from "./UsersList";
+import jokesList from "./JokesList";
 import { withAuthCkeck } from "./WithAuthCheck";
 
 export function Container(props) {
@@ -17,7 +17,7 @@ export function Container(props) {
         <span>
           <NavLink exact to="/">Login</NavLink><br />
           <NavLink to="/register">Register</NavLink><br />
-          <NavLink to="/users">Users List</NavLink><br />
+          <NavLink to="/jokes">Jokes List</NavLink><br />
         </span>
 
         <button onClick={onLogout}>Logout</button>
@@ -39,8 +39,8 @@ export function Container(props) {
 
         <Route
           exact
-          path="/users"
-          render={props => withAuthCkeck(UsersList, props)}
+          path="/jokes"
+          render={props => withAuthCkeck(jokesList, props)}
         />
       </main>
     </div>
