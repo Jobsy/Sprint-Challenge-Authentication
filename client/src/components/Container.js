@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, NavLink, withRouter } from "react-router-dom";
 import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 import UsersList from "./UsersList";
 import { withAuthCkeck } from "./WithAuthCheck";
 

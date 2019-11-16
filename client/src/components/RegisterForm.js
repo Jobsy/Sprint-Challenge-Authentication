@@ -18,10 +18,7 @@ export default function RegisterForm(props) {
             password: passwordRef.current.value,
         })
         .then(res => {
-            // debugger
-            // console.log("///token: ", res.data.token)
-            localStorage.setItem("token", res.data.token)
-            props.history.push("/users");
+           props.history.push("/");
         });
     };
 

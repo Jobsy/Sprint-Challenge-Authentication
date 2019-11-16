@@ -1,19 +1,12 @@
 
 import React, { useState, useEffect } from "react";
-import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 
 import axiosWithAuth from "../axios/index";
-import axios from "axios";
-import { UsersForm } from "./UsersForm";
 
 
 
 export default function UsersList(props) {
-  const [friends, setFriends] = useState({ data: [] });
-  const [newFriends, setNewFriends] = useState({ data: [] });
-  console.log("?????: ", friends)
-  console.log("?????22222: ", newFriends)
-
+  const [jokes, setJokes] = useState({ data: [] });
 
   useEffect(() => {
 
@@ -21,7 +14,7 @@ export default function UsersList(props) {
       .then(res => {
         // debugger
         console.log(">>>: ", res)
-        setFriends(res);
+        setJokes(res);
       })
       .catch(error => {
         alert("Sorryyyyyyyyyy" + error.message)
@@ -32,9 +25,9 @@ export default function UsersList(props) {
   return (
     <div>
 
-      {console.log("ffff2222:", friends)}
+      {console.log("ffff2222:", jokes)}
       {
-        friends.data.map(friend => (
+        jokes.data.map(friend => (
           // newFriends.data.map(friend => (
           <div key={friend.id}>
             Joke: {friend.joke}
