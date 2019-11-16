@@ -8,13 +8,14 @@ export function Container(props) {
   const onLogout = () => {
     localStorage.clear();
     props.history.push("/");
-  } 
+  }
 
   return (
     <div>
       <nav>
         <span>
           <NavLink exact to="/">Login</NavLink><br />
+          <NavLink to="/register">Register</NavLink><br />
           <NavLink to="/users">Users List</NavLink><br />
         </span>
 
@@ -27,6 +28,12 @@ export function Container(props) {
           exact
           path="/"
           component={LoginForm}
+        />
+
+        <Route
+          exact
+          path="/register"
+          component={RegisterForm}
         />
 
         <Route
